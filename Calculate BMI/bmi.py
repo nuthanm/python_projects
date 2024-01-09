@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/calculate', methods=['POST'])
+@app.route('/calculatebmi', methods=['POST'])
 def calculate():
     if request.method == 'POST':
         weight = float(request.form['weight'])
