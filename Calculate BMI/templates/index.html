@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>BMI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>BMI Calculator</h1>
     <form action="/calculatebmi" method="post">
         <label for="weight">Enter Weight (in kg):</label><br>
-        <input type="text" id="weight" name="weight"><br>
+        <input type="text" id="weight" name="weight" placeholder="weight"><br>
         
         <label for="height">Enter Height (in meters):</label><br>
-        <input type="text" id="height" name="height"><br><br>
+        <input type="text" id="height" name="height" placeholder="height"><br><br>
         
         <input type="submit" value="Calculate BMI">
     </form>
