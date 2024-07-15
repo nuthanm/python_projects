@@ -1,0 +1,81 @@
+GET /api/AsyncOnlyRegions
+###
+
+POST /api/AsyncOnlyRegions
+Content-Type: application/json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+Content-Type: text/json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+Content-Type: application/*+json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+###
+
+GET /api/AsyncOnlyRegions/{id}
+###
+
+PUT /api/AsyncOnlyRegions/{{id}}
+Content-Type: application/json
+{"data": "#/components/schemas/UpdateRegionRequestDto"}
+Content-Type: text/json
+{"data": "#/components/schemas/UpdateRegionRequestDto"}
+Content-Type: application/*+json
+{"data": "#/components/schemas/UpdateRegionRequestDto"}
+###
+
+DELETE /api/AsyncOnlyRegions/{{{id}}}
+###
+
+GET /api/Regions
+###
+
+POST /api/Regions
+Content-Type: application/json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+Content-Type: text/json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+Content-Type: application/*+json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+###
+
+GET /api/Regions/{id}
+###
+
+PUT /api/Regions/{{id}}
+Content-Type: application/json
+{"data": "#/components/schemas/UpdateRegionRequestDto"}
+Content-Type: text/json
+{"data": "#/components/schemas/UpdateRegionRequestDto"}
+Content-Type: application/*+json
+{"data": "#/components/schemas/UpdateRegionRequestDto"}
+###
+
+DELETE /api/Regions/{{{id}}}
+###
+
+GET /api/RegionsTraditional
+###
+
+POST /api/RegionsTraditional
+Content-Type: application/json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+Content-Type: text/json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+Content-Type: application/*+json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+###
+
+GET /api/RegionsTraditional/{id}
+###
+
+PUT /api/RegionsTraditional/{{id}}
+Content-Type: application/json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+Content-Type: text/json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+Content-Type: application/*+json
+{"data": "#/components/schemas/AddRegionRequestDto"}
+###
+
+DELETE /api/RegionsTraditional/{{{id}}}
+###
+

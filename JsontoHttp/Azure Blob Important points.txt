@@ -1,0 +1,64 @@
+For any blob we upload in azure blob storage what is the default access for this?
+Ans: Private and protected
+
+How to change the access?
+Blob Level: On click of Change Access Level button
+ => Disable this button you cannot change.
+
+So at storage account level,  
+ => Settings => Configuration 
+    => Change: Allow Blob Anonymous Access from Disabled to Enabled.
+After that click on Change Access level button at blob level
+=> Anonymous access level
+   - Private (no anonymous access)
+   - Blob (anonymous read acess for blobs only)
+   - Container (Anonymous Read access for containers and blobs)
+
+To work with Blobs in .net
+---------------------------
+1. Nuget Package: Azure.Storage.Blobs
+   - Three classes
+     - BlobServiceClient - For Storage accounts/resources and their containers and blobs.
+     - BlobContainerClient - For Containers and their blobs
+     - BlobClient - For Blobs
+2. If you are accessing public blob then no need of any keys or connectionstrings
+   var blobClient = new BlobClient(new Uri("bloburl"));
+   var blobContent = blobClient.DownloadContentAsync();
+   JsonSerializer.Deserialize<YourClass>(blobContent.Value.Content.ToString());
+
+3. If you want to access private file then you should either through connection string or access key.
+   To get these: Under Security + Networking Section => Access Keys
+   => You will find two Keys: key1/key2 with their connection strings
+   => You can take any one.
+   One way is:
+  var blobClient = new BlobClient(new Uri("bloburl"), new StorageSharedKeyCredential(<yourstoreageAccount>,<Key>));
+
+  Or
+  var blobClient = new BlobClient(new Uri("bloburl"), new DefaultAzureCredential());
+  Nuget: Azure.Identity
+  => It uses different credential options to authenticate this resource.
+  1. EnvironmentCredential
+  2. WorkloadIdentityCredential
+  3. ManagedIdentityCredential
+  4. SharedTokenCacheCredential
+  5. VisualStudioCredential
+  6. VisualStudioCodeCredential
+  7. AzureCliCredential
+  8. AzurePowerShellCredential
+  9. AzureDeveloperCliCredential
+  10. InteractiveBrowserCredential
+
+Consider: If you use VisualStudioCredential 
+Then the loggedIn user should have an access to that storage account
+Go to your Storage Account 
+ => Access Control(IAM)
+    => Under Role
+       => Storage Blob Data Contributor Role under Job Functions roles
+       => Click Next
+       => Under Members section 
+           => Add member details
+              => Add user and Click on Review and Assign
+  => Under Role Assignments
+     => You can verify the added user
+
+          

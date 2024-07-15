@@ -16,9 +16,19 @@
         
         <input type="submit" value="Calculate BMI">
     </form>
-	<h1>Your BMI Result</h1>
 	{% if bmi %}
-    <p>Your BMI is: {{ bmi }}</p>
+	<p>
+		Your BMI is: {{ bmi }}
+			
+		{% if bmi >= 18.5 and bmi <=24.9 %}
+			&#128522;
+		{% elif bmi < 18.5 %}
+			&#128530;
+		{% else %}
+			&#128533;
+		{% endif  %}
+	
+	</p>
 	{% endif %}
 </body>
 </html>
